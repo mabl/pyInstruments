@@ -1,5 +1,6 @@
 import os
 import time
+import sys
 import xml.etree.ElementTree as ET
 
 class UsbmtcInterface(object):
@@ -18,13 +19,20 @@ class UsbmtcInterface(object):
       
     delay = float(delay) if (delay is not None) else self.DEFAULT_DELAY
     
-    os.write(self.FILE, bytes(message, 'UTF-8'))
+    if sys.version_info[0] == 2:
+      os.write(self.FILE, message)
+    else:
+      os.write(self.FILE, bytes(message, 'UTF-8'))
     
     if delay:
       time.sleep(delay)
     
   def read(self, numbytes=BUFFSIZE):
-    reply = str(os.read(self.FILE, numbytes), 'UTF-8')
+    if sys.version_info[0] == 2:
+      reply = os.read(self.FILE, numbytes)
+    else:
+      reply = str(os.read(self.FILE, numbytes), 'UTF-8')
+      
     if self.debug:
       print(reply)
     return reply
