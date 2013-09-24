@@ -37,7 +37,7 @@ print('Device ID:', device.bus.identity)
 device.bus.scope.autosetup()
 
 # So let's enable averaging over two samples
-device.bus.acquire.averageSampes = 2
+device.bus.acquire.averageSamples = 2
 device.bus.acquire.type = 'average'
 ```
 

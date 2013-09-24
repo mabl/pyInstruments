@@ -278,7 +278,7 @@
         <description>Detect peak values of the signal</description>
       </choice>
     </attribute>
-    <attribute command=":ACQUIRE:AVERAGES" name="averageSampes" type='int'>
+    <attribute command=":ACQUIRE:AVERAGES" name="averageSamples" type='int'>
       <description>Set or query the number of samples to average over</description>
       <choice val="2"/>
       <choice val="4"/>
