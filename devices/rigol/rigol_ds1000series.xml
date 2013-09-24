@@ -1,0 +1,794 @@
+<?xml version="1.0"?>
+<commands>
+  <action command="*RST" name="reset" delay="4.0">
+    <description>Reset the system parameters</description>
+  </action>
+  <attribute command="*IDN" name="identity" readonly="True">
+    <description>Query the ID character string of the instrument</description>
+  </attribute>
+  
+  <category name="scope">
+    <action command=":STOP" name="stop">
+      <description>Stop acquiring wave forms</description>
+    </action>
+    <action command=":KEY:FORCE" name="unlock">
+      <description>Unlock scope from remote control</description>
+    </action>
+    <action command=":RUN" name="run">
+      <description>Start acquiring wave forms until stopped</description>
+    </action>
+    <action command=":AUTO" name="autosetup" delay='4.0'>
+      <description>Set the optimum display conditions based on inputs</description>
+    </action>
+    <action command=":HARDCOPY" name="screenshot">
+      <description>Save screen as bitmap</description>
+    </action>
+    <action command=":STORAGE:FACTORY:LOAD" name="factoryreset">
+      <description>Reset to factory settings</description>
+    </action>
+  </category>
+  <category name="measure">
+    <category name="defaultChannel">
+      <attribute command=":MEASURE:VBASE" name="vbase" readonly="True" type="float">
+        <description>Measure base value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:FALLTIME" name="falltime" readonly="True" type="float">
+        <description>Measure falling time of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:VMIN" name="vmin" readonly="True" type="float">
+        <description>Measure the minum value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:OVERSHOOT" name="vovershoot" readonly="True" type="float">
+        <description>Measure overshoot of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:VAVERAGE" name="vrms" readonly="True" type="float">
+        <description>Measure average value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:NWIDTH" name="negPulsewidth" readonly="True" type="float">
+        <description>Measure negative pulse width of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:VAVERAGE" name="vaverage" readonly="True" type="float">
+        <description>Measure average value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:RISETIME" name="risetime" readonly="True" type="float">
+        <description>Measure rising time of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:PWIDTH" name="posPulsewidth" readonly="True" type="float">
+        <description>Measure positive pulse width of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:NDELAY" name="negDelay" readonly="True" type="float">
+        <description>Measure delay between falling edge of channels</description>
+      </attribute>
+      <attribute command=":MEASURE:VMAX" name="vmax" readonly="True" type="float">
+        <description>Measure the maximum value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:PERIOD" name="period" readonly="True" type="float">
+        <description>Measure period of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:NDUTYCYCLE" name="negDutycycle" readonly="True" type="float">
+        <description>Measure positive duty cycle of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:VPP" name="vpp" readonly="True" type="float">
+        <description>Measure the peak-peak value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:FREQUENCY" name="frequency" readonly="True" type="float">
+        <description>Measure frequency of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:PDELAY" name="posDelay" readonly="True" type="float">
+        <description>Measure delay between rising edge of channels</description>
+      </attribute>
+      <attribute command=":MEASURE:VTOP" name="vtop" readonly="True" type="float">
+        <description>Measure top value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:PDUTYCYCLE" name="posDutycycle" readonly="True" type="float">
+        <description>Measure positive duty cycle of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:VAMP" name="vamp" readonly="True" type="float">
+        <description>Measure the amplitute of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:PRESHOOT" name="vpreshoot" readonly="True" type="float">
+        <description>Measure preshoot of waveform</description>
+      </attribute>
+    </category>
+    <attribute command=":MEASURE:TOTAL" name="showAll">
+      <description>Show all measurements on display</description>
+      <choice val="True" wirename="ON">
+        <description>Show all measurements</description>
+      </choice>
+      <choice val="False" wirename="OFF">
+        <description>Don't show all measurements</description>
+      </choice>
+    </attribute>
+    <action command=":MEASURE:CLEAR" name="clear">
+      <description>Clear all current measurements</description>
+    </action>
+    <attribute command=":MEASURE:SOURCE" name="selectedChannel">
+      <description>Current measurement channel</description>
+      <choice val="channel1" wirename="CH1" wirenameSet="CHANNEL1">
+        <description>Channel 1</description>
+      </choice>
+      <choice val="channel2" wirename="CH2" wirenameSet="CHANNEL1">
+        <description>Channel 2</description>
+      </choice>
+    </attribute>
+    <category name="channel2">
+      <attribute command=":MEASURE:VBASE" name="vbase" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure base value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:FALLTIME" name="falltime" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure falling time of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:VMIN" name="vmin" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure the minum value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:OVERSHOOT" name="vovershoot" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure overshoot of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:VAVERAGE" name="vrms" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure average value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:NWIDTH" name="negPulsewidth" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure negative pulse width of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:VAVERAGE" name="vaverage" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure average value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:RISETIME" name="risetime" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure rising time of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:PWIDTH" name="posPulsewidth" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure positive pulse width of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:NDELAY" name="negDelay" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure delay between falling edge of channels</description>
+      </attribute>
+      <attribute command=":MEASURE:VMAX" name="vmax" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure the maximum value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:PERIOD" name="period" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure period of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:NDUTYCYCLE" name="negDutycycle" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure positive duty cycle of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:VPP" name="vpp" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure the peak-peak value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:FREQUENCY" name="frequency" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure frequency of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:PDELAY" name="posDelay" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure delay between rising edge of channels</description>
+      </attribute>
+      <attribute command=":MEASURE:VTOP" name="vtop" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure top value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:PDUTYCYCLE" name="posDutycycle" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure positive duty cycle of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:VAMP" name="vamp" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure the amplitute of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:PRESHOOT" name="vpreshoot" option="CHANNEL2" readonly="True" type="float">
+        <description>Measure preshoot of waveform</description>
+      </attribute>
+    </category>
+    <category name="channel1">
+      <attribute command=":MEASURE:VBASE" name="vbase" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure base value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:FALLTIME" name="falltime" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure falling time of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:VMIN" name="vmin" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure the minum value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:OVERSHOOT" name="vovershoot" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure overshoot of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:VAVERAGE" name="vrms" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure average value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:NWIDTH" name="negPulsewidth" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure negative pulse width of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:VAVERAGE" name="vaverage" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure average value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:RISETIME" name="risetime" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure rising time of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:PWIDTH" name="posPulsewidth" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure positive pulse width of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:NDELAY" name="negDelay" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure delay between falling edge of channels</description>
+      </attribute>
+      <attribute command=":MEASURE:VMAX" name="vmax" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure the maximum value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:PERIOD" name="period" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure period of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:NDUTYCYCLE" name="negDutycycle" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure positive duty cycle of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:VPP" name="vpp" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure the peak-peak value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:FREQUENCY" name="frequency" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure frequency of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:PDELAY" name="posDelay" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure delay between rising edge of channels</description>
+      </attribute>
+      <attribute command=":MEASURE:VTOP" name="vtop" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure top value of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:PDUTYCYCLE" name="posDutycycle" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure positive duty cycle of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:VAMP" name="vamp" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure the amplitute of waveform</description>
+      </attribute>
+      <attribute command=":MEASURE:PRESHOOT" name="vpreshoot" option="CHANNEL1" readonly="True" type="float">
+        <description>Measure preshoot of waveform</description>
+      </attribute>
+    </category>
+  </category>
+  <category name="acquire">
+    <attribute command=":ACQUIRE:MODE" name="mode">
+      <description>Set or query acquire mode of the oscilloscope</description>
+      <choice val="realtime" wirename="REAL_TIME" wirenameSet="RTIME">
+        <description>Real time sampling</description>
+      </choice>
+      <choice val="equaltime" wirename="EQUAL_TIME" wirenameSet="ETIME">
+        <description>Equivalent sampling</description>
+      </choice>
+    </attribute>
+    <category name="samplingrate">
+      <attribute command=":ACQUIRE:SAMPLINGRATE" name="channel2" readonly="True">
+        <description>Get the sampling rate of channel 2 in Hertz</description>
+      </attribute>
+      <attribute command=":ACQUIRE:SAMPLINGRATE" name="channel1" readonly="True">
+        <description>Get the sampling rate of channel 1 in Hertz</description>
+      </attribute>
+      <attribute command=":ACQUIRE:SAMPLINGRATE" name="digital" readonly="True">
+        <description>Get the sampling rate of digital channel in Hertz</description>
+      </attribute>
+    </category>
+    <attribute command=":ACQUIRE:MEMDEPTH" name="memorydepth">
+      <description>Set or query the memory depth</description>
+      <choice val="long">
+        <description>Long memory</description>
+      </choice>
+      <choice val="normal">
+        <description>Normal memory</description>
+      </choice>
+    </attribute>
+    <attribute command=":ACQUIRE:TYPE" name="type">
+      <description>Set or query normal, average or peak detection as acquisition mode</description>
+      <choice val="normal">
+        <description>Normal acquisition</description>
+      </choice>
+      <choice val="average">
+        <description>Average over several measurements</description>
+      </choice>
+      <choice val="peakdetect" wirename="Peak Detect" wirenameSet="PEAKDETECT">
+        <description>Detect peak values of the signal</description>
+      </choice>
+    </attribute>
+    <attribute command=":ACQUIRE:AVERAGES" name="averageSampes" type='int'>
+      <description>Set or query the number of samples to average over</description>
+      <choice val="2"/>
+      <choice val="4"/>
+      <choice val="8"/>
+      <choice val="16"/>
+      <choice val="32"/>
+      <choice val="64"/>
+      <choice val="128"/>
+      <choice val="256"/>
+    </attribute>
+  </category>
+  <category name="display">
+    <attribute command=":DISPLAY:SCREEN" name="inverted">
+      <!-- NOTE: This command is officially undocumented -->
+      <description>Set and query currently selected channel</description>
+      <choice val="True" wirename="INVERTED"/>
+      <choice val="False" wirename="NORMAL" />
+    </attribute>
+    <attribute command=":DISPLAY:GRID" name="grid">
+      <description>Set or query the display grid</description>
+      <choice val="full">
+        <description>Grid and coordinates</description>
+      </choice>
+      <choice val="half">
+        <description>Only coordinates</description>
+      </choice>
+      <choice val="none">
+        <description>No grid</description>
+      </choice>
+    </attribute>
+    <category name="persistance">
+      <action command=":DISPLAY:CLEAR" name="clear">
+        <description>Clear persistance display</description>
+      </action>
+      <attribute command=":DISPLAY:PERSIST" name="enabled">
+        <description>Set or query the state of wafeform persistance</description>
+        <choice val="True" wirename="ON">
+          <description>Enabled persistance</description>
+        </choice>
+        <choice val="False" wirename="OFF">
+          <description>Disabled persistance</description>
+        </choice>
+      </attribute>
+    </category>
+    <attribute command=":DISPLAY:TYPE" name="type">
+      <description>Set or query the display type between sampling points</description>
+      <choice val="vector" wirename="VECTORS">
+        <description>vector display</description>
+      </choice>
+      <choice val="dots">
+        <description>dot display</description>
+      </choice>
+    </attribute>
+    <category name="menu">
+      <attribute command=":DISPLAY:MNUSTATUS" name="enabled">
+        <description>Set or query if the menu is enabled</description>
+        <choice val="True" wirename="ON">
+          <description>Enabled menu</description>
+        </choice>
+        <choice val="False" wirename="OFF">
+          <description>Disabled menu</description>
+        </choice>
+      </attribute>
+      <attribute command=":DISPLAY:MNUDISPLAY" name="timeout">
+        <description>Set or query the menu timeout</description>
+        <choice val="1" wirename="1s">
+          <description>1 second</description>
+        </choice>
+        <choice val="2" wirename="2s">
+          <description>2 second</description>
+        </choice>
+        <choice val="5" wirename="5s">
+          <description>5 second</description>
+        </choice>
+        <choice val="10" wirename="10s">
+          <description>10 second</description>
+        </choice>
+        <choice val="20" wirename="20s">
+          <description>20 second</description>
+        </choice>
+        <choice val="None" wirename="Infinite">
+          <description>Infinite</description>
+        </choice>
+      </attribute>
+    </category>
+    <category name="brightness">
+      <attribute command=":DISPLAY:BRIGHTNESS" name="grid">
+        <description>Set or query the display grid brightness</description>
+        <choice val="0"/>
+        <choice val="1"/>
+        <choice val="2"/>
+        <choice val="3"/>
+        <choice val="4"/>
+        <choice val="5"/>
+        <choice val="6"/>
+        <choice val="7"/>
+        <choice val="8"/>
+        <choice val="9"/>
+        <choice val="10"/>
+        <choice val="11"/>
+        <choice val="12"/>
+        <choice val="13"/>
+        <choice val="14"/>
+        <choice val="15"/>
+        <choice val="16"/>
+        <choice val="17"/>
+        <choice val="18"/>
+        <choice val="19"/>
+        <choice val="20"/>
+        <choice val="21"/>
+        <choice val="22"/>
+        <choice val="23"/>
+        <choice val="24"/>
+        <choice val="25"/>
+        <choice val="26"/>
+        <choice val="27"/>
+        <choice val="28"/>
+        <choice val="29"/>
+        <choice val="30"/>
+        <choice val="31"/>
+        <choice val="32"/>
+      </attribute>
+      <attribute command=":DISPLAY:INTENSITY" name="waveform">
+        <description>Set or query the displayed waveform brightness</description>
+        <choice val="0"/>
+        <choice val="1"/>
+        <choice val="2"/>
+        <choice val="3"/>
+        <choice val="4"/>
+        <choice val="5"/>
+        <choice val="6"/>
+        <choice val="7"/>
+        <choice val="8"/>
+        <choice val="9"/>
+        <choice val="10"/>
+        <choice val="11"/>
+        <choice val="12"/>
+        <choice val="13"/>
+        <choice val="14"/>
+        <choice val="15"/>
+        <choice val="16"/>
+        <choice val="17"/>
+        <choice val="18"/>
+        <choice val="19"/>
+        <choice val="20"/>
+        <choice val="21"/>
+        <choice val="22"/>
+        <choice val="23"/>
+        <choice val="24"/>
+        <choice val="25"/>
+        <choice val="26"/>
+        <choice val="27"/>
+        <choice val="28"/>
+        <choice val="29"/>
+        <choice val="30"/>
+        <choice val="31"/>
+        <choice val="32"/>
+      </attribute>
+    </category>
+  </category>
+  <category name="trigger">
+    <attribute command=":TRIGGER:MODE" name="mode">
+      <description>Set or query the trigger mode</description>
+      <choice val="edge">
+        <description>Edge trigger</description>
+      </choice>
+      <choice val="pulse">
+        <description>Pulse trigger</description>
+      </choice>
+      <choice val="video">
+        <description>Video trigger</description>
+      </choice>
+      <choice val="slope">
+        <description>Slope trigger</description>
+      </choice>
+      <choice val="pattern">
+        <description>Pattern trigger</description>
+      </choice>
+      <choice val="duration">
+        <description>Duration trigger</description>
+      </choice>
+      <choice val="alternation">
+        <description>Alternation trigger</description>
+      </choice>
+    </attribute>
+    <attribute command=":TRIGGER:STATUS" name="status" readonly="True">
+      <description>Query the trigger status</description>
+      <choice val="run"/>
+      <choice val="stoped" wirename="STOP"/>
+      <choice val="triggered" wirename="T'D"/>
+      <choice val="auto"/>
+      <choice val="waiting" wirename="WAIT"/>
+    </attribute>
+    <attribute command=":TRIGGER:HOLDOFF" name="holdoff" type="float">
+      <description>Query or set the trigger holdoff</description>
+    </attribute>
+    <category name='edge'>
+      <attribute command=':TRIGGER:EDGE:SOURCE' name='source'>
+        <description>Set or query the trigger source of the EDGE trigger</description>
+        <choice val="channel1" wirename="CH1" wirenameSet="CHANNEL1">
+          <description>Channel 1</description>
+        </choice>
+        <choice val="channel2" wirename="CH2" wirenameSet="CHANNEL1">
+          <description>Channel 2</description>
+        </choice>
+        <choice val="ext">
+          <description>External trigger channel</description>
+        </choice>
+        <choice val="acline">
+          <description>Mains supply trigger</description>
+        </choice>
+        <choice val="d0" />
+        <choice val="d1" />
+        <choice val="d2" />
+        <choice val="d3" />
+        <choice val="d4" />
+        <choice val="d5" />
+        <choice val="d6" />
+        <choice val="d7" />
+        <choice val="d8" />
+        <choice val="d9" />
+        <choice val="d10" />
+        <choice val="d11" />
+        <choice val="d12" />
+        <choice val="d13" />
+        <choice val="d14" />
+        <choice val="d15" />
+      </attribute>
+      <attribute command=":TRIGGER:EDGE:LEVEL" name="level" type="float">
+        <description>Query or set the trigger level in volts</description>
+      </attribute>
+      <attribute command=":TRIGGER:EDGE:SWEEP" name="sweep">
+        <description>Query or set the trigger sweep</description>
+        <choice val="auto" />
+        <choice val="normal" />
+        <choice val="single" />
+      </attribute>
+      <attribute command=":TRIGGER:EDGE:COUPLING" name="coupling">
+        <description>Query or set the trigger coupling type</description>
+        <choice val="dc"><description>Allow all signals pass</description></choice>
+        <choice val="ac"><description>Block DC and attenuate signals lower 10Hz</description></choice>
+        <choice val="hf"><description>Reject hight frequency signals greater 150kHz</description></choice>
+        <choice val="lf"><description>Reject DC signals and attenuate signals lower 8kHz</description></choice>
+      </attribute>
+      <attribute command=":TRIGGER:EDGE:SLOPE" name="slope">
+        <description>Query or set the trigger direction of the edge trigger</description>
+        <choice val="positive"><description>Trigger on rising edge</description></choice>
+        <choice val="negative"><description>Trigger on falling edge</description></choice>
+      </attribute>
+      <attribute command=":TRIGGER:EDGE:SENSITIVITY" name="sensitivity" type="float">
+        <description>Query or set the edge trigger sensitivity in divisions</description>
+      </attribute>
+    </category>
+    <!-- FIXME: Add all other triggers -->
+  </category>
+  <category name="timebase">
+    <category name="delayedScale">
+      <attribute command=":TIMEBASE:DELAYED:SCALE" name="scale">
+        <description>Set or query the scale/div of the delayed timebase</description>
+      </attribute>
+      <attribute command=":TIMEBASE:DELAYED:OFFSET" name="offset">
+        <description>Set or query the time offset of the delayed timebase</description>
+      </attribute>
+    </category>
+    <attribute command=":TIMEBASE:MODE" name="mode">
+      <description>Timebase to use. The delayed timebase is a zoom into the main timebase data.</description>
+      <choice val="main">
+        <description>main timebase</description>
+      </choice>
+      <choice val="delayed">
+        <description>delayed timebase</description>
+      </choice>
+    </attribute>
+    <attribute command=":TIMEBASE:FORMAT" name="format">
+      <description>Set and query mode of the horizontal timebase</description>
+      <choice val="yt" wirename="Y-T" wirenameSet="YT">
+        <description>Y-T mode</description>
+      </choice>
+      <choice val="xy" wirename="X-Y" wirenameSet="XY">
+        <description>X-Y mode</description>
+      </choice>
+      <choice val="scanning">
+        <description>scanning mode</description>
+      </choice>
+    </attribute>
+    <category name="mainScale">
+      <attribute command=":TIMEBASE:SCALE" name="scale" type="float">
+        <description>Set or query the scale/div of the timebase</description>
+      </attribute>
+      <attribute command=":TIMEBASE:OFFSET" name="offset" type="float">
+        <description>Set or query the time offset of the timebase</description>
+      </attribute>
+    </category>
+  </category>
+  <category name="channels">
+    <attribute command=":CHANNEL:ACTIVE" name="active">
+      <!-- NOTE: This command is officially undocumented -->
+      <description>Set and query currently selected channel</description>
+      <choice val="channel1" />
+      <choice val="channel2" />
+      <choice val="math" />
+      <choice val="digital" />
+      <!-- <choice val="none" /> -->
+    </attribute>
+    <category name="channel1">
+      <attribute command=":CHANNEL1:BWLIMIT" name="bandwithLimit">
+        <description>Set or query the bandwith limit</description>
+        <choice val="True" wirename="ON">
+          <description>BW limit enabled</description>
+        </choice>
+        <choice val="False" wirename="OFF">
+          <description>BW limit disabled</description>
+        </choice>
+      </attribute>
+      <attribute command=":CHANNEL1:COUPLING" name="coupling">
+        <description>Query or set the channel input coupling type</description>
+        <choice val="dc"><description>Allow all signals pass</description></choice>
+        <choice val="ac"><description>Block DC and attenuate signals lower 10Hz</description></choice>
+        <choice val="gnd"><description>Ground measured signal</description></choice>
+      </attribute>
+      <attribute command=":CHANNEL1:DISPLAY" name="displayed">
+        <description>Set or query the display of the input channel</description>
+        <choice val="True" wirename="1" wirenameSet="ON" />
+        <choice val="False" wirename="0" wirenameSet="OFF" />
+      </attribute>
+      <attribute command=":CHANNEL1:INVERT" name="inverted">
+        <description>Set or query the inversion of the input channel</description>
+        <choice val="True" wirename="ON" />
+        <choice val="False" wirename="OFF" />
+      </attribute>
+      <attribute command=":CHANNEL1:OFFSET" name="offset" type="float">
+        <description>Set or query input channel offset in Volts</description>
+      </attribute>
+      <attribute command=":CHANNEL1:PROBE" name="propeAttenuationFactor" type="float">
+        <description>Set or query input prope attenuation factor</description>
+      </attribute>
+      <attribute command=":CHANNEL1:SCALE" name="scale" type="float">
+        <description>Set or query vertical input scale in Volts/div</description>
+      </attribute>
+      <attribute command=":CHANNEL1:FILTER" name="filterEnabled">
+        <description>Set or query the state of the input filter</description>
+        <choice val="True" wirename="ON" />
+        <choice val="False" wirename="OFF" />
+      </attribute>
+      <attribute command=":CHANNEL1:MEMORYDEPTH" name="memorydepth" type="int" readonly="True">
+        <description>Query the input channel depth</description>
+      </attribute>
+      <attribute command=":CHANNEL1:VERNIER" name="vernier">
+        <description>Set or query the scale adjusting mode.</description>
+        <choice val="fine" wirenameSet="ON" wirename="Fine" />
+        <choice val="coarse" wirenameSet="OFF" wirename="Coarse" />
+      </attribute>
+    </category>
+    <category name="channel2">
+      <attribute command=":CHANNEL2:BWLIMIT" name="bandwithLimit">
+        <description>Set or query the bandwith limit</description>
+        <choice val="True" wirename="ON">
+          <description>BW limit enabled</description>
+        </choice>
+        <choice val="False" wirename="OFF">
+          <description>BW limit disabled</description>
+        </choice>
+      </attribute>
+      <attribute command=":CHANNEL2:COUPLING" name="coupling">
+        <description>Query or set the channel input coupling type</description>
+        <choice val="dc"><description>Allow all signals pass</description></choice>
+        <choice val="ac"><description>Block DC and attenuate signals lower 10Hz</description></choice>
+        <choice val="gnd"><description>Ground measured signal</description></choice>
+      </attribute>
+      <attribute command=":CHANNEL2:DISPLAY" name="displayed">
+        <description>Set or query the display of the input channel</description>
+        <choice val="True" wirename="1" wirenameSet="ON" />
+        <choice val="False" wirename="0" wirenameSet="OFF" />
+      </attribute>
+      <attribute command=":CHANNEL2:INVERT" name="inverted">
+        <description>Set or query the inversion of the input channel</description>
+        <choice val="True" wirename="ON" />
+        <choice val="False" wirename="OFF" />
+      </attribute>
+      <attribute command=":CHANNEL2:OFFSET" name="offset" type="float">
+        <description>Set or query input channel offset in Volts</description>
+      </attribute>
+      <attribute command=":CHANNEL2:PROBE" name="propeAttenuationFactor" type="float">
+        <description>Set or query input prope attenuation factor</description>
+      </attribute>
+      <attribute command=":CHANNEL2:SCALE" name="scale" type="float">
+        <description>Set or query vertical input scale in Volts/div</description>
+      </attribute>
+      <attribute command=":CHANNEL2:FILTER" name="filterEnabled">
+        <description>Set or query the state of the input filter</description>
+        <choice val="True" wirename="ON" />
+        <choice val="False" wirename="OFF" />
+      </attribute>
+      <attribute command=":CHANNEL2:MEMORYDEPTH" name="memorydepth" type="int" readonly="True">
+        <description>Query the input channel depth</description>
+      </attribute>
+      <attribute command=":CHANNEL2:VERNIER" name="vernier">
+        <description>Set or query the scale adjusting mode.</description>
+        <choice val="fine" wirenameSet="ON" wirename="Fine" />
+        <choice val="coarse" wirenameSet="OFF" wirename="Coarse" />
+      </attribute>
+    </category>
+    <category name='math'>
+      <attribute command=":MATH:DISPLAY" name="displayed">
+        <description>Set or query the state of math operation</description>
+        <choice val="True" wirename="ON">
+          <description>Enabled math display</description>
+        </choice>
+        <choice val="False" wirename="OFF">
+          <description>Disabled math display</description>
+        </choice>
+      </attribute>
+      <attribute command=":MATH:OPERATE" name="operation">
+        <description>Set or query the the math operation</description>
+        <choice val="a+b"/>
+        <choice val="a-b"/>
+        <choice val="a*b"/>
+        <choice val="fft"/>
+      </attribute>
+      <attribute command=":FFT:DISPLAY" name="fftDisplayed">
+        <description>Set or query the state of math operation</description>
+        <choice val="True" wirename="ON">
+          <description>Enabled FFT display</description>
+        </choice>
+        <choice val="False" wirename="OFF">
+          <description>Disabled FFT display</description>
+        </choice>
+      </attribute>
+    </category>
+  </category>
+
+  <category name="cursor">
+    <!-- These commands are not officially documented but have been
+         extracted from the firmware file of a DS1000E with version 00.04.00.00.
+         
+         It's rather likely that these operation are exposed on all firmware versions.
+      -->
+    <attribute command=":CURSOR:MODE" name="mode">
+      <description>Query or set the mode of the cursor</description>
+      <choice val="off" wirename="CLOSe" wirenameSet="CLOSE" />
+      <choice val="manual" wirename="MANUal" wirenameSet="MANUAL" />
+      <choice val="track" wirename="TRACk" wirenameSet="TRACK" />
+      <choice val="auto" wirename="MEASure" wirenameSet="MEASURE" />
+    </attribute>
+    
+    <category name="manual">
+      <attribute command=":CURSOR:MANUAL:SOURCE" name="source">
+        <description>Set or query the channel to measure on</description>
+        <choice val="channel1" wirename="CHANnel1" wirenameSet="CHANNEL1" />
+        <choice val="channel2" wirename="CHANnel2" wirenameSet="CHANNEL2" />
+      </attribute>
+      <attribute command=":CURSOR:MANUAL:TYPE" name="type">
+        <description>Measure in time or in amplitude domain</description>
+        <choice val="amplitude" wirename="AMPlitude" wirenameSet="AMPLITUDE" />
+        <choice val="time" wirename="TIME" wirenameSet="TIME" />
+      </attribute>
+      
+      <category name="cursorA">
+        <attribute command=":CURSOR:MANUAL:CAX" name="posX" type='int'>
+          <description>Set or query the X position of cursor A</description>
+        </attribute>
+        <attribute command=":CURSOR:MANUAL:CAY" name="posY" type='int'>
+          <description>Set or query the Y position of cursor A</description>
+        </attribute>
+        <attribute command=":CURSOR:MANUAL:AXVALUE" name="mappedPosX" type='float' readonly="True">
+          <description>Query the mapped X position of cursor A</description>
+        </attribute>
+        <attribute command=":CURSOR:MANUAL:AYVALUE" name="mappedPosY" type='float' readonly="True">
+          <description>Query the mapped Y position of cursor A</description>
+        </attribute>
+      </category>
+      <category name="cursorB">
+        <attribute command=":CURSOR:MANUAL:CBX" name="posX" type='int'>
+          <description>Set or query the X position of cursor B</description>
+        </attribute>
+        <attribute command=":CURSOR:MANUAL:CBY" name="posY" type='int'>
+          <description>Set or query the Y position of cursor B</description>
+        </attribute>
+        <attribute command=":CURSOR:MANUAL:BXVALUE" name="mappedPosX" type='float' readonly="True">
+          <description>Query the mapped X position of cursor B</description>
+        </attribute>
+        <attribute command=":CURSOR:MANUAL:BYVALUE" name="mappedPosY" type='float' readonly="True">
+          <description>Query the mapped Y position of cursor B</description>
+        </attribute>
+      </category>
+
+      <category name="measure">
+        <attribute command=":CURSOR:MANUAL:XDELTA" name="deltaX" type='float' readonly="True">
+          <description>Query vertical delta between cursors</description>
+        </attribute>
+        <attribute command=":CURSOR:MANUAL:IXDELTA" name="inverseDeltaX" type='float' readonly="True">
+          <description>Query inverse vertical delta between cursors</description>
+        </attribute>
+        <attribute command=":CURSOR:MANUAL:YDELTA" name="deltaX" type='float' readonly="True">
+          <description>Query vertical delta between cursors</description>
+        </attribute>
+      </category>
+
+    </category>
+    <category name="track">
+      <attribute command=":CURSOR:TRACK:SA" name="cursorAsource">
+        <description>Set or query the channel to measure on cursor A</description>
+        <choice val="channel1" wirename="CHANnel1" wirenameSet="CHANNEL1" />
+        <choice val="channel2" wirename="CHANnel2" wirenameSet="CHANNEL2" />
+      </attribute>
+      <attribute command=":CURSOR:TRACK:SB" name="cursorAsource">
+        <description>Set or query the channel to measure on cursor A</description>
+        <choice val="channel1" wirename="CHANnel1" wirenameSet="CHANNEL1" />
+        <choice val="channel2" wirename="CHANnel2" wirenameSet="CHANNEL2" />
+      </attribute>
+    </category>
+  </category>
+</commands>
