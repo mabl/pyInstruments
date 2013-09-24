@@ -4,7 +4,7 @@ import pprint
 
 # Create interface and load description of protocol
 interface = instrumentIO.UsbmtcInterface('/dev/usbtmc0', debug=False)
-device  = instrumentIO.Device(interface, 'devices/rigol_ds1000series.xml')
+device  = instrumentIO.Device(interface, 'devices/rigol/rigol_ds1000series.xml')
 
 # All defined attributes and commands can be accessed directly
 # over the 'bus' attribute.
