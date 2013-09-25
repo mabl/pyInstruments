@@ -370,7 +370,7 @@
         </attribute>
       </category>
       <category name="brightness">
-        <attribute command=":DISPLAY:BRIGHTNESS" name="grid">
+        <attribute command=":DISPLAY:BRIGHTNESS" name="grid" type="int">
           <description>Set or query the display grid brightness</description>
           <choice val="0"/>
           <choice val="1"/>
@@ -406,7 +406,7 @@
           <choice val="31"/>
           <choice val="32"/>
         </attribute>
-        <attribute command=":DISPLAY:INTENSITY" name="waveform">
+        <attribute command=":DISPLAY:INTENSITY" name="waveform" type="int">
           <description>Set or query the displayed waveform brightness</description>
           <choice val="0"/>
           <choice val="1"/>
@@ -541,10 +541,10 @@
     </category>
     <category name="timebase">
       <category name="delayedScale">
-        <attribute command=":TIMEBASE:DELAYED:SCALE" name="scale">
+        <attribute command=":TIMEBASE:DELAYED:SCALE" name="scale" type="float">
           <description>Set or query the scale/div of the delayed timebase</description>
         </attribute>
-        <attribute command=":TIMEBASE:DELAYED:OFFSET" name="offset">
+        <attribute command=":TIMEBASE:DELAYED:OFFSET" name="offset" type="float">
           <description>Set or query the time offset of the delayed timebase</description>
         </attribute>
       </category>
