@@ -46,13 +46,13 @@ We can even read out all configurable options and reapply them afterwards:
 ```python
 # We can also download the whole configuration
 # By default, this only includes writable attributes.
-oldSettings = device.get_settings()
+old_settings = device.get_settings()
 
 # Reset to default settings
 device.bus.reset()
 
 # And reapply the saved settings
-device.set_settings(oldSettings)
+device.set_settings(old_settings)
 ```
 
 After this code the oscilloscope is in the exact same configuration 
