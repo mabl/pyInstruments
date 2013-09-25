@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<instrument>
+<instrument  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../device.xsd">
   <properties>
     <description><!--TODO--></description>
-    
   </properties>
   <commands>
     <action command="*RST" name="reset" delay="4.0">
       <description>Reset the system parameters</description>
     </action>
-    <attribute command="*IDN" name="identity" readonly="True">
+    <attribute command="*IDN" name="identity" readonly="true">
       <description>Query the ID character string of the instrument</description>
     </attribute>
     
@@ -34,64 +34,64 @@
     </category>
     <category name="measure">
       <category name="defaultChannel">
-        <attribute command=":MEASURE:VBASE" name="vbase" readonly="True" type="float">
+        <attribute command=":MEASURE:VBASE" name="vbase" readonly="true" type="float">
           <description>Measure base value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:FALLTIME" name="falltime" readonly="True" type="float">
+        <attribute command=":MEASURE:FALLTIME" name="falltime" readonly="true" type="float">
           <description>Measure falling time of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:VMIN" name="vmin" readonly="True" type="float">
+        <attribute command=":MEASURE:VMIN" name="vmin" readonly="true" type="float">
           <description>Measure the minum value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:OVERSHOOT" name="vovershoot" readonly="True" type="float">
+        <attribute command=":MEASURE:OVERSHOOT" name="vovershoot" readonly="true" type="float">
           <description>Measure overshoot of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:VAVERAGE" name="vrms" readonly="True" type="float">
+        <attribute command=":MEASURE:VAVERAGE" name="vrms" readonly="true" type="float">
           <description>Measure average value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:NWIDTH" name="negPulsewidth" readonly="True" type="float">
+        <attribute command=":MEASURE:NWIDTH" name="negPulsewidth" readonly="true" type="float">
           <description>Measure negative pulse width of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:VAVERAGE" name="vaverage" readonly="True" type="float">
+        <attribute command=":MEASURE:VAVERAGE" name="vaverage" readonly="true" type="float">
           <description>Measure average value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:RISETIME" name="risetime" readonly="True" type="float">
+        <attribute command=":MEASURE:RISETIME" name="risetime" readonly="true" type="float">
           <description>Measure rising time of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:PWIDTH" name="posPulsewidth" readonly="True" type="float">
+        <attribute command=":MEASURE:PWIDTH" name="posPulsewidth" readonly="true" type="float">
           <description>Measure positive pulse width of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:NDELAY" name="negDelay" readonly="True" type="float">
+        <attribute command=":MEASURE:NDELAY" name="negDelay" readonly="true" type="float">
           <description>Measure delay between falling edge of channels</description>
         </attribute>
-        <attribute command=":MEASURE:VMAX" name="vmax" readonly="True" type="float">
+        <attribute command=":MEASURE:VMAX" name="vmax" readonly="true" type="float">
           <description>Measure the maximum value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:PERIOD" name="period" readonly="True" type="float">
+        <attribute command=":MEASURE:PERIOD" name="period" readonly="true" type="float">
           <description>Measure period of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:NDUTYCYCLE" name="negDutycycle" readonly="True" type="float">
+        <attribute command=":MEASURE:NDUTYCYCLE" name="negDutycycle" readonly="true" type="float">
           <description>Measure positive duty cycle of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:VPP" name="vpp" readonly="True" type="float">
+        <attribute command=":MEASURE:VPP" name="vpp" readonly="true" type="float">
           <description>Measure the peak-peak value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:FREQUENCY" name="frequency" readonly="True" type="float">
+        <attribute command=":MEASURE:FREQUENCY" name="frequency" readonly="true" type="float">
           <description>Measure frequency of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:PDELAY" name="posDelay" readonly="True" type="float">
+        <attribute command=":MEASURE:PDELAY" name="posDelay" readonly="true" type="float">
           <description>Measure delay between rising edge of channels</description>
         </attribute>
-        <attribute command=":MEASURE:VTOP" name="vtop" readonly="True" type="float">
+        <attribute command=":MEASURE:VTOP" name="vtop" readonly="true" type="float">
           <description>Measure top value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:PDUTYCYCLE" name="posDutycycle" readonly="True" type="float">
+        <attribute command=":MEASURE:PDUTYCYCLE" name="posDutycycle" readonly="true" type="float">
           <description>Measure positive duty cycle of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:VAMP" name="vamp" readonly="True" type="float">
+        <attribute command=":MEASURE:VAMP" name="vamp" readonly="true" type="float">
           <description>Measure the amplitute of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:PRESHOOT" name="vpreshoot" readonly="True" type="float">
+        <attribute command=":MEASURE:PRESHOOT" name="vpreshoot" readonly="true" type="float">
           <description>Measure preshoot of waveform</description>
         </attribute>
       </category>
@@ -117,126 +117,126 @@
         </choice>
       </attribute>
       <category name="channel2">
-        <attribute command=":MEASURE:VBASE" name="vbase" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:VBASE" name="vbase" option="CHANNEL2" readonly="true" type="float">
           <description>Measure base value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:FALLTIME" name="falltime" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:FALLTIME" name="falltime" option="CHANNEL2" readonly="true" type="float">
           <description>Measure falling time of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:VMIN" name="vmin" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:VMIN" name="vmin" option="CHANNEL2" readonly="true" type="float">
           <description>Measure the minum value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:OVERSHOOT" name="vovershoot" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:OVERSHOOT" name="vovershoot" option="CHANNEL2" readonly="true" type="float">
           <description>Measure overshoot of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:VAVERAGE" name="vrms" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:VAVERAGE" name="vrms" option="CHANNEL2" readonly="true" type="float">
           <description>Measure average value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:NWIDTH" name="negPulsewidth" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:NWIDTH" name="negPulsewidth" option="CHANNEL2" readonly="true" type="float">
           <description>Measure negative pulse width of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:VAVERAGE" name="vaverage" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:VAVERAGE" name="vaverage" option="CHANNEL2" readonly="true" type="float">
           <description>Measure average value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:RISETIME" name="risetime" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:RISETIME" name="risetime" option="CHANNEL2" readonly="true" type="float">
           <description>Measure rising time of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:PWIDTH" name="posPulsewidth" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:PWIDTH" name="posPulsewidth" option="CHANNEL2" readonly="true" type="float">
           <description>Measure positive pulse width of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:NDELAY" name="negDelay" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:NDELAY" name="negDelay" option="CHANNEL2" readonly="true" type="float">
           <description>Measure delay between falling edge of channels</description>
         </attribute>
-        <attribute command=":MEASURE:VMAX" name="vmax" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:VMAX" name="vmax" option="CHANNEL2" readonly="true" type="float">
           <description>Measure the maximum value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:PERIOD" name="period" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:PERIOD" name="period" option="CHANNEL2" readonly="true" type="float">
           <description>Measure period of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:NDUTYCYCLE" name="negDutycycle" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:NDUTYCYCLE" name="negDutycycle" option="CHANNEL2" readonly="true" type="float">
           <description>Measure positive duty cycle of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:VPP" name="vpp" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:VPP" name="vpp" option="CHANNEL2" readonly="true" type="float">
           <description>Measure the peak-peak value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:FREQUENCY" name="frequency" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:FREQUENCY" name="frequency" option="CHANNEL2" readonly="true" type="float">
           <description>Measure frequency of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:PDELAY" name="posDelay" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:PDELAY" name="posDelay" option="CHANNEL2" readonly="true" type="float">
           <description>Measure delay between rising edge of channels</description>
         </attribute>
-        <attribute command=":MEASURE:VTOP" name="vtop" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:VTOP" name="vtop" option="CHANNEL2" readonly="true" type="float">
           <description>Measure top value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:PDUTYCYCLE" name="posDutycycle" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:PDUTYCYCLE" name="posDutycycle" option="CHANNEL2" readonly="true" type="float">
           <description>Measure positive duty cycle of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:VAMP" name="vamp" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:VAMP" name="vamp" option="CHANNEL2" readonly="true" type="float">
           <description>Measure the amplitute of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:PRESHOOT" name="vpreshoot" option="CHANNEL2" readonly="True" type="float">
+        <attribute command=":MEASURE:PRESHOOT" name="vpreshoot" option="CHANNEL2" readonly="true" type="float">
           <description>Measure preshoot of waveform</description>
         </attribute>
       </category>
       <category name="channel1">
-        <attribute command=":MEASURE:VBASE" name="vbase" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:VBASE" name="vbase" option="CHANNEL1" readonly="true" type="float">
           <description>Measure base value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:FALLTIME" name="falltime" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:FALLTIME" name="falltime" option="CHANNEL1" readonly="true" type="float">
           <description>Measure falling time of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:VMIN" name="vmin" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:VMIN" name="vmin" option="CHANNEL1" readonly="true" type="float">
           <description>Measure the minum value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:OVERSHOOT" name="vovershoot" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:OVERSHOOT" name="vovershoot" option="CHANNEL1" readonly="true" type="float">
           <description>Measure overshoot of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:VAVERAGE" name="vrms" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:VAVERAGE" name="vrms" option="CHANNEL1" readonly="true" type="float">
           <description>Measure average value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:NWIDTH" name="negPulsewidth" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:NWIDTH" name="negPulsewidth" option="CHANNEL1" readonly="true" type="float">
           <description>Measure negative pulse width of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:VAVERAGE" name="vaverage" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:VAVERAGE" name="vaverage" option="CHANNEL1" readonly="true" type="float">
           <description>Measure average value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:RISETIME" name="risetime" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:RISETIME" name="risetime" option="CHANNEL1" readonly="true" type="float">
           <description>Measure rising time of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:PWIDTH" name="posPulsewidth" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:PWIDTH" name="posPulsewidth" option="CHANNEL1" readonly="true" type="float">
           <description>Measure positive pulse width of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:NDELAY" name="negDelay" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:NDELAY" name="negDelay" option="CHANNEL1" readonly="true" type="float">
           <description>Measure delay between falling edge of channels</description>
         </attribute>
-        <attribute command=":MEASURE:VMAX" name="vmax" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:VMAX" name="vmax" option="CHANNEL1" readonly="true" type="float">
           <description>Measure the maximum value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:PERIOD" name="period" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:PERIOD" name="period" option="CHANNEL1" readonly="true" type="float">
           <description>Measure period of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:NDUTYCYCLE" name="negDutycycle" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:NDUTYCYCLE" name="negDutycycle" option="CHANNEL1" readonly="true" type="float">
           <description>Measure positive duty cycle of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:VPP" name="vpp" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:VPP" name="vpp" option="CHANNEL1" readonly="true" type="float">
           <description>Measure the peak-peak value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:FREQUENCY" name="frequency" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:FREQUENCY" name="frequency" option="CHANNEL1" readonly="true" type="float">
           <description>Measure frequency of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:PDELAY" name="posDelay" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:PDELAY" name="posDelay" option="CHANNEL1" readonly="true" type="float">
           <description>Measure delay between rising edge of channels</description>
         </attribute>
-        <attribute command=":MEASURE:VTOP" name="vtop" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:VTOP" name="vtop" option="CHANNEL1" readonly="true" type="float">
           <description>Measure top value of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:PDUTYCYCLE" name="posDutycycle" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:PDUTYCYCLE" name="posDutycycle" option="CHANNEL1" readonly="true" type="float">
           <description>Measure positive duty cycle of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:VAMP" name="vamp" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:VAMP" name="vamp" option="CHANNEL1" readonly="true" type="float">
           <description>Measure the amplitute of waveform</description>
         </attribute>
-        <attribute command=":MEASURE:PRESHOOT" name="vpreshoot" option="CHANNEL1" readonly="True" type="float">
+        <attribute command=":MEASURE:PRESHOOT" name="vpreshoot" option="CHANNEL1" readonly="true" type="float">
           <description>Measure preshoot of waveform</description>
         </attribute>
       </category>
@@ -252,13 +252,13 @@
         </choice>
       </attribute>
       <category name="samplingrate">
-        <attribute command=":ACQUIRE:SAMPLINGRATE" name="channel2" readonly="True">
+        <attribute command=":ACQUIRE:SAMPLINGRATE" name="channel2" readonly="true">
           <description>Get the sampling rate of channel 2 in Hertz</description>
         </attribute>
-        <attribute command=":ACQUIRE:SAMPLINGRATE" name="channel1" readonly="True">
+        <attribute command=":ACQUIRE:SAMPLINGRATE" name="channel1" readonly="true">
           <description>Get the sampling rate of channel 1 in Hertz</description>
         </attribute>
-        <attribute command=":ACQUIRE:SAMPLINGRATE" name="digital" readonly="True">
+        <attribute command=":ACQUIRE:SAMPLINGRATE" name="digital" readonly="true">
           <description>Get the sampling rate of digital channel in Hertz</description>
         </attribute>
       </category>
@@ -469,7 +469,7 @@
           <description>Alternation trigger</description>
         </choice>
       </attribute>
-      <attribute command=":TRIGGER:STATUS" name="status" readonly="True">
+      <attribute command=":TRIGGER:STATUS" name="status" readonly="true">
         <description>Query the trigger status</description>
         <choice val="run"/>
         <choice val="stoped" wirename="STOP"/>
@@ -628,7 +628,7 @@
           <choice val="True" wirename="ON" />
           <choice val="False" wirename="OFF" />
         </attribute>
-        <attribute command=":CHANNEL1:MEMORYDEPTH" name="memorydepth" type="int" readonly="True">
+        <attribute command=":CHANNEL1:MEMORYDEPTH" name="memorydepth" type="int" readonly="true">
           <description>Query the input channel depth</description>
         </attribute>
         <attribute command=":CHANNEL1:VERNIER" name="vernier">
@@ -677,7 +677,7 @@
           <choice val="True" wirename="ON" />
           <choice val="False" wirename="OFF" />
         </attribute>
-        <attribute command=":CHANNEL2:MEMORYDEPTH" name="memorydepth" type="int" readonly="True">
+        <attribute command=":CHANNEL2:MEMORYDEPTH" name="memorydepth" type="int" readonly="true">
           <description>Query the input channel depth</description>
         </attribute>
         <attribute command=":CHANNEL2:VERNIER" name="vernier">
@@ -748,10 +748,10 @@
           <attribute command=":CURSOR:MANUAL:CAY" name="posY" type='int'>
             <description>Set or query the Y position of cursor A</description>
           </attribute>
-          <attribute command=":CURSOR:MANUAL:AXVALUE" name="mappedPosX" type='float' readonly="True">
+          <attribute command=":CURSOR:MANUAL:AXVALUE" name="mappedPosX" type='float' readonly="true">
             <description>Query the mapped X position of cursor A</description>
           </attribute>
-          <attribute command=":CURSOR:MANUAL:AYVALUE" name="mappedPosY" type='float' readonly="True">
+          <attribute command=":CURSOR:MANUAL:AYVALUE" name="mappedPosY" type='float' readonly="true">
             <description>Query the mapped Y position of cursor A</description>
           </attribute>
         </category>
@@ -762,22 +762,22 @@
           <attribute command=":CURSOR:MANUAL:CBY" name="posY" type='int'>
             <description>Set or query the Y position of cursor B</description>
           </attribute>
-          <attribute command=":CURSOR:MANUAL:BXVALUE" name="mappedPosX" type='float' readonly="True">
+          <attribute command=":CURSOR:MANUAL:BXVALUE" name="mappedPosX" type='float' readonly="true">
             <description>Query the mapped X position of cursor B</description>
           </attribute>
-          <attribute command=":CURSOR:MANUAL:BYVALUE" name="mappedPosY" type='float' readonly="True">
+          <attribute command=":CURSOR:MANUAL:BYVALUE" name="mappedPosY" type='float' readonly="true">
             <description>Query the mapped Y position of cursor B</description>
           </attribute>
         </category>
 
         <category name="measure">
-          <attribute command=":CURSOR:MANUAL:XDELTA" name="deltaX" type='float' readonly="True">
+          <attribute command=":CURSOR:MANUAL:XDELTA" name="deltaX" type='float' readonly="true">
             <description>Query vertical delta between cursors</description>
           </attribute>
-          <attribute command=":CURSOR:MANUAL:IXDELTA" name="inverseDeltaX" type='float' readonly="True">
+          <attribute command=":CURSOR:MANUAL:IXDELTA" name="inverseDeltaX" type='float' readonly="true">
             <description>Query inverse vertical delta between cursors</description>
           </attribute>
-          <attribute command=":CURSOR:MANUAL:YDELTA" name="deltaX" type='float' readonly="True">
+          <attribute command=":CURSOR:MANUAL:YDELTA" name="deltaX" type='float' readonly="true">
             <description>Query vertical delta between cursors</description>
           </attribute>
         </category>

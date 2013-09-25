@@ -178,7 +178,7 @@ class Device(object):
                     # Get all attribute parameters
                     command = element.attrib['command']
                     attr_type = {'str': str, 'int': int, 'float': float}[element.attrib.get('type', 'str')]
-                    read_only = {'True': True, 'False': False}[element.attrib.get('readonly', 'False')]
+                    read_only = {'true': True, 'false': False}[element.attrib.get('readonly', 'false')]
                     option = element.attrib.get('option', None)
 
                     new_atr = Device._ConfigRepresentation.Attribute(command, read_only=read_only, choices=choices,

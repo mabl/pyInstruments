@@ -1,0 +1,72 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            Simple device specification intended to fully
+            describe how to interface to electronic lab equipment.
+        </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:element name="instrument" type="instrumentType" />
+
+    <xsd:complexType name="instrumentType">
+        <xsd:sequence>
+            <xsd:element name="properties" type="propertiesType" />
+            <xsd:element name="commands" type="unnamedCategoryType" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="propertiesType">
+        <xsd:choice>
+            <xsd:element name="description" type="xsd:string" />
+        </xsd:choice>
+    </xsd:complexType>
+    
+    <xsd:complexType name="unnamedCategoryType">
+        <xsd:sequence>
+            <xsd:element name="action" type="baseCommandType" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="attribute" type="attributeType" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="category" type="categoryType" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="categoryType">
+        <xsd:simpleContent>
+            <xsd:extension base="unnamedCategoryType">
+                <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="baseCommandType">
+        <xsd:choice>
+            <xsd:element name="description" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+        </xsd:choice>
+        <xsd:attribute name="command" type="xsd:string" use="required"/>
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
+        <xsd:attribute name="delay" type="xsd:float" use="optional"/>
+        <xsd:attribute name="option" type="xsd:string" use="optional" />
+    </xsd:complexType>
+
+    <xsd:complexType name="choiceType">
+        <xsd:sequence>
+            <xsd:element name="description" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="val" type="xsd:string" use="required" />
+        <xsd:attribute name="wirename" type="xsd:string" use="optional" />
+        <xsd:attribute name="wirenameSet" type="xsd:string" use="optional" />
+    </xsd:complexType>
+
+    <xsd:complexType name="attributeType">
+        <xsd:complexContent>
+            <xsd:extension base="baseCommandType">
+                <xsd:sequence>
+                    <xsd:element name="description" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="choice" type="choiceType" minOccurs="0" maxOccurs="unbounded" />
+                </xsd:sequence>
+                <xsd:attribute name="type" type="xsd:string" /> <!--TODO: Add proper type -->
+                <xsd:attribute name="readonly" type="xsd:boolean" use="optional"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+</xsd:schema>
