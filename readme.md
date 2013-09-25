@@ -26,7 +26,7 @@ device  = instrumentIO.Device(interface, 'devices/rigol/rigol_ds1000series.xml')
 
 # All defined attributes and commands can be accessed directly
 # over the 'bus' attribute.
-# Access to these properties always involes a command being sent
+# Access to these properties always involves a command being sent
 # to the device - so take care.
 
 # Let's first read some property like the device ID
@@ -46,13 +46,13 @@ We can even read out all configurable options and reapply them afterwards:
 ```python
 # We can also download the whole configuration
 # By default, this only includes writable attributes.
-oldSettings = device.getSettings()
+oldSettings = device.get_settings()
 
 # Reset to default settings
 device.bus.reset()
 
 # And reapply the saved settings
-device.setSettings(oldSettings)
+device.set_settings(oldSettings)
 ```
 
 After this code the oscilloscope is in the exact same configuration 

@@ -25,7 +25,7 @@ device.bus.acquire.type = 'average'
 
 # We can also download the whole configuration
 # By default, this only includes writable attributes.
-oldSettings = device.getSettings()
+oldSettings = device.get_settings()
 
 print("Configurable options:")
 pprint.pprint(oldSettings)
@@ -33,7 +33,7 @@ pprint.pprint(oldSettings)
 
 # And reapply it again later on
 device.bus.reset()
-device.setSettings(oldSettings)
+device.set_settings(oldSettings)
 
 
 # Unlock the scope so that the user can use it again
