@@ -9,7 +9,7 @@ device  = instrumentIO.Device(interface, 'devices/rigol/rigol_ds1000series.xml')
 
 # All defined attributes and commands can be accessed directly
 # over the 'bus' attribute.
-# Access to these properties always involes a command being sent
+# Access to these properties always involves a command being sent
 # to the device - so take care.
 
 # Let's first read some property like the device ID
