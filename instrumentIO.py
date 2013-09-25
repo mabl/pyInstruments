@@ -143,7 +143,9 @@ class Device(object):
 
     def __init__(self, interface, descriptorFile):
         self._interface = interface
-        self._commands = Device._parseXMLET(ET.parse(descriptorFile))
+
+        description = Device._parseXMLET(ET.parse(descriptorFile))
+        self._commands = description['commands']
 
     @staticmethod
     def _parseXMLET(tree):
@@ -192,8 +194,14 @@ class Device(object):
                     d.members[name] = newAct
 
             return d
+        root = tree.getroot()
 
-        return parseCategory(Device._ConfigRepresentation.Category(''), tree.getroot())
+        # Parse command definitions
+        commands_element = root.findall("commands")[0]
+        commands = parseCategory(Device._ConfigRepresentation.Category(''), commands_element)
+
+        description = {'commands': commands}
+        return description
 
     @property
     def bus(self):
