@@ -111,22 +111,22 @@ class Device(object):
           cmd += ' ' + self.option
         return cmd
 
-      def parseAnwser(self, anwser):
+      def parseAnswer(self, answer):
         # If choices are given, it must be one of those
         if self.choices:
           valid = False
           for choice in self.choices:
             choiceVal = choice.get('wirename', choice['val'].upper())
-            if anwser == choiceVal:
-              anwser = choice['val']
+            if answer == choiceVal:
+              answer = choice['val']
               valid = True
               break
           if not valid:
             raise ValueError("Value returned by the device is not a valid option")
         try:
-          val = self.type(anwser)
+          val = self.type(answer)
         except ValueError:
-          val = anwser
+          val = answer
         return val
 
     class Action(object):
@@ -225,8 +225,8 @@ class Device(object):
       return function
     
     if type(e) == Device._ConfigRepresentation.Attribute:
-      anwser = self._interface.ask(e.getRequestCommand(), delay = e.delay)
-      return e.parseAnwser(anwser)
+      answer = self._interface.ask(e.getRequestCommand(), delay = e.delay)
+      return e.parseAnswer(answer)
     
     if type(e) == Device._ConfigRepresentation.Category:
       raise KeyError("You have accessed a category, please decent further")
